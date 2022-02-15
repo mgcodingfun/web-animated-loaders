@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bg-clr: rgb(14, 3, 61);
+$dot-clr: rgb(1, 204, 255);
+
+.main__container {
+    background: $bg-clr;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .area1 {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotate 6s linear infinite;
+
+        .center {
+            background: #fff;
+        }
+
+        &__dot {
+            width: 10px;
+            height: 10px;
+            background-color: $dot-clr;
+            position: absolute;
+            border-radius: 100%;
+            transform: rotate(calc(var(--i) * (360deg / 10))) translateY(90px);
+            animation: animate1 0.8s linear infinite;
+        }
+    }
+
+    .area2 {
+        // border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-90deg);
+
+        &__dot {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            position: absolute;
+            border-radius: 100%;
+            transform: rotate(calc(var(--i) * (360deg / 10))) translateY(70px);
+            animation: animate2 0.8s linear infinite;
+        }
+    }
+
+    .area3 {
+        // border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-90deg);
+
+        &__dot {
+            width: 3px;
+            height: 3px;
+            background-color: $dot-clr;
+            position: absolute;
+            border-radius: 100%;
+            transform: rotate(calc(var(--i) * (360deg / 10))) translateY(50px);
+            animation: animate3 0.8s linear infinite;
+        }
+    }
+
+    .area4 {
+        // border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(90deg);
+
+        &__dot {
+            width: 3px;
+            height: 3px;
+            background-color: #fff;
+            position: absolute;
+            border-radius: 100%;
+            transform: rotate(calc(var(--i) * (360deg / 10))) translateY(30px);
+            animation: animate4 0.8s linear infinite;
+        }
+    }
+}
+
+// animations
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate1 {
+    0% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(90px);
+    }
+    50% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(70px);
+    }
+    100% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(90px);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(70px);
+    }
+    50% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(90px);
+    }
+    100% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(70px);
+    }
+}
+
+@keyframes animate3 {
+    0% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(50px);
+    }
+    50% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(30px);
+    }
+    100% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(50px);
+    }
+}
+
+@keyframes animate4 {
+    0% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(30px);
+    }
+    50% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(50px);
+    }
+    100% {
+        transform: rotate(calc(var(--i) * (360deg / 10))) translateY(30px);
+    }
+}
