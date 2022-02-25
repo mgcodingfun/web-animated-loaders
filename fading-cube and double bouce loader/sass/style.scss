@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main__container {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .boxes {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transform: rotate(-45deg);
+
+    &__box1,
+    &__box2,
+    &__box3,
+    &__box4 {
+      width: 75px;
+      height: 75px;
+      background: #27b044;
+    }
+
+    &__box1 {
+      // background: red;
+      animation: fade 1.5s 0.1s linear infinite;
+    }
+
+    &__box2 {
+      // background: blue;
+      animation: fade 1.5s 0.4s linear infinite;
+    }
+
+    &__box3 {
+      // background: yellow;
+      animation: fade 1.5s 1s linear infinite;
+    }
+
+    &__box4 {
+      // background: pink;
+      animation: fade 1.5s 0.7s linear infinite;
+    }
+  }
+
+  //   second loader
+  .bounce {
+    height: 50px;
+    width: 50px;
+    position: relative;
+
+    &__dot1 {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      background: rgba(3, 207, 252, 0.5);
+      border-radius: 100%;
+      animation: bounce 1s linear infinite alternate;
+    }
+
+    &__dot2 {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      background: #03cffc;
+      border-radius: 100%;
+
+      animation: bounce1 1s linear infinite alternate;
+    }
+  }
+}
+
+// aniamtion
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
